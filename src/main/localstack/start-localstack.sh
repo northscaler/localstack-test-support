@@ -2,8 +2,8 @@
 
 THIS_DIR="$(cd "$(dirname "$0")"; pwd)"
 
-if [ -n "$CI_COMMIT_SHA" ]; then # we're in CI pipeline
-  echo 'in pipeline - localstack is started'
+if { [ -n "$GITHUB_SHA" ] || [ -n "$CI_COMMIT_SHA" ]; }; then # we're in CI pipeline
+  echo 'in pipeline - do not start localstack'
 else
   CONTAINER=${1:-$LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_NAME}
   if [ -z "$CONTAINER" ]; then
