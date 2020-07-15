@@ -28,9 +28,7 @@ It is a `TODO` to search for an available port.
 ### Environment variables
 
 The following environment variables can be set to configure the docker container:
-* LOCALSTACK_TEST_SUPPORT_TAG: The tag of the [`localstack` Docker image](https://hub.docker.com/r/localstack/localstack)  or custom image to use, default `latest`
-* LOCALSTACK_TEST_SUPPORT_PORT: visible client port on `localhost` to map to container port, default is content of `localstack/default-localstack-test-port`
-* LOCALSTACK_TEST_SUPPORT_HEALTH_PORT: visible client health endpoint port on `localhost` to map to container port, default is content of `localstack/default-localstack-test-health_port`
-* LOCALSTACK_TEST_SUPPORT_CONTAINER: name of container, default is content of file `localstack/default-localstack-test-container`
-* LOCALSTACK_TEST_SUPPORT_CONTAINER_PORT: localstack client port in container, default `9042`
-* LOCALSTACK_TEST_SUPPORT_IMAGE: docker image name, default `localstack`
+* LOCALSTACK_TEST_SUPPORT_LOCALSTACK_PORT: visible client port on `localhost` to map to container port, default is content of `localstack/default-localstack-test-port`
+* LOCALSTACK_TEST_SUPPORT_LOCALSTACK_HEALTH_PORT: visible client health endpoint port on `localhost` to map to container port, default is content of `localstack/default-localstack-test-health_port`
+* LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_NAME: name of container, default is content of file `localstack/default-localstack-test-container`
+* LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_LABEL: The label of the [`localstack` Docker image](https://hub.docker.com/r/localstack/localstack), default is content of file `localstack/default-localstack-test-container-label`
