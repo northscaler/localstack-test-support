@@ -21,8 +21,7 @@ describe('integration tests of localstack', function () {
       const containerName = process.env.LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_NAME || m.localstackConnect.defaultContainerName
       const containerLabel = process.env.LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_LABEL || m.localstackConnect.defaultContainerLabel
       const port = process.env.LOCALSTACK_TEST_SUPPORT_LOCALSTACK_PORT || m.localstackConnect.defaultPort
-      const healthPort = process.env.LOCALSTACK_TEST_SUPPORT_LOCALSTACK_HEALTH_PORT || m.localstackConnect.defaultHealthPort
-      await m.localstackConnect({ containerName, containerLabel, port, healthPort })
+      await m.localstackConnect({ containerName, containerLabel, port })
 
       await pause(5000)
       const status = await http.get({
