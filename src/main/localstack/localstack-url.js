@@ -3,14 +3,14 @@
 const fs = require('fs')
 const MissingRequiredArgumentError = require('@northscaler/error-support/errors/MissingRequiredArgumentError')
 
-const DEFAULT_HEALTH_PORT_FILENAME = `${__dirname}/default-localstack-test-health-port`
-const DEFAULT_HEALTH_PORT = parseInt(fs.readFileSync(DEFAULT_HEALTH_PORT_FILENAME))
+const DEFAULT_PORT_FILENAME = `${__dirname}/default-localstack-test-port`
+const DEFAULT_PORT = parseInt(fs.readFileSync(DEFAULT_PORT_FILENAME))
 
 module.exports = ({
   protocol = 'http://',
   host = 'localhost',
-  port = DEFAULT_HEALTH_PORT,
-  endpoint = 'health'
+  endpoint = 'health',
+  port = DEFAULT_PORT
 } = {}) => {
   protocol = protocol || throw new MissingRequiredArgumentError({ msg: 'protocol' })
   if (!protocol.endsWith('://')) protocol = `${protocol}://`
