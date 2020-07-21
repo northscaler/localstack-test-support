@@ -8,6 +8,8 @@ This package is intended to be installed in your project in `devDependencies`.
 
 > NOTE: requires a Unix-y shell (`/usr/bin/env sh`) to be available.
 >This is not designed to run on Windows; PRs/MRs welcome.
+>
+> Requires localstack/localstack:0.11.3 or higher
 
 Usage:
 ```javascript
@@ -29,6 +31,5 @@ It is a `TODO` to search for an available port.
 
 The following environment variables can be set to configure the docker container:
 * LOCALSTACK_TEST_SUPPORT_LOCALSTACK_PORT: visible client port on `localhost` to map to container port, default is content of `localstack/default-localstack-test-port`
-* LOCALSTACK_TEST_SUPPORT_LOCALSTACK_HEALTH_PORT: visible client health endpoint port on `localhost` to map to container port, default is content of `localstack/default-localstack-test-health_port`
 * LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_NAME: name of container, default is content of file `localstack/default-localstack-test-container`
 * LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_LABEL: The label of the [`localstack` Docker image](https://hub.docker.com/r/localstack/localstack), default is content of file `localstack/default-localstack-test-container-label`

@@ -9,8 +9,7 @@ DEFAULT_PORT="$(cat "$THIS_DIR/default-localstack-test-port")"
 DEFAULT_HEALTH_PORT="$(cat "$THIS_DIR/default-localstack-test-health-port")"
 DEFAULT_CONTAINER_LABEL="$(cat "$THIS_DIR/default-localstack-test-container-label")"
 PORT=${2:-$DEFAULT_PORT}
-HEALTH_PORT=${3:-$DEFAULT_HEALTH_PORT}
-CONTAINER_LABEL=${4:-$DEFAULT_CONTAINER_LABEL}
+CONTAINER_LABEL=${3:-$DEFAULT_CONTAINER_LABEL}
 RUNNING=$(docker inspect --format="{{ .State.Running }}" "$CONTAINER" 2> /dev/null)
 
 if [ $? -eq 1 ] || [ "$RUNNING" == "false" ]; then
@@ -25,7 +24,7 @@ if [ $? -eq 1 ] || [ "$RUNNING" == "false" ]; then
     echo "No localstack container exists"
   fi
 
-  CMD="docker run --name $CONTAINER -p $PORT:4566 -p $HEALTH_PORT:8080 -d localstack/localstack:$CONTAINER_LABEL"
+  CMD="docker run --name $CONTAINER -p $PORT:4566 -d localstack/localstack:$CONTAINER_LABEL"
   echo "$CMD"
 
   $CMD

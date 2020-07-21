@@ -13,11 +13,7 @@ else
   if [ -z "$PORT" ]; then
     PORT="$(cat $THIS_DIR/default-localstack-test-port)"
   fi
-  HEALTH_PORT=${3:-$LOCALSTACK_TEST_SUPPORT_LOCALSTACK_HEALTH_PORT}
-  if [ -z "$HEALTH_PORT" ]; then
-    PORT="$(cat $THIS_DIR/default-localstack-test-health-port)"
-  fi
-  CONTAINER_LABEL=${4:-$LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_LABEL}
+  CONTAINER_LABEL=${3:-$LOCALSTACK_TEST_SUPPORT_LOCALSTACK_CONTAINER_LABEL}
   if [ -z "$CONTAINER_LABEL" ]; then
     CONTAINER_LABEL="$(cat $THIS_DIR/default-localstack-test-container-label)"
   fi
